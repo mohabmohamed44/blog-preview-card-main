@@ -1,0 +1,157 @@
+/* import fonts */
+@font-face {
+    font-family: 'Figtree';
+    src: url('/assets/fonts/static/Figtree-SemiBold.ttf') format('truetype');
+    font-weight: 600 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* setting variables */
+    /* colour variables */
+    --clr-black: hsl(0, 0%, 7%);
+    --clr-gray: hsl(0, 0%, 50%);
+    --clr-yellow: hsl(47, 88%, 63%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    /* font variables */
+    --ff-primary: 'Figtree', sans-serif;
+    --fw-semibold: 600;
+    --fw-extrabold: 800;
+    --fs-small: .925rem;
+    --fs-big: 1.2rem;
+
+    /* card variables */
+    --card-width: 300px;
+    --card-padding: 20px;
+    --card-bd-width: 1px;
+    --card-bd-style: solid;
+    --card-bd-rad: 16px;
+    --card-box-sw: 10px 10px var(--clr-black);
+
+    --card-clr-active: var(--clr-yellow);
+    --card-box-sw-active: 20px 20px var(--clr-black);
+    --card-transition: .1s all;
+}
+
+.card {
+    width: var(--card-width);
+    padding: var(--card-padding);
+    border-color: var(--clr-black);
+    border-width: var(--card-bd-width);
+    border-style: var(--card-bd-style);
+    border-radius: var(--card-bd-rad);
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    box-shadow: var(--card-box-sw);
+    transition: var(--card-transition);
+}
+
+.card-data-img-container {
+    overflow: hidden;
+}
+
+.card-data-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.card-data-tag {
+    width: min-content;
+    font-weight: var(--fw-extrabold);
+    color: var(--clr-black);
+    padding: 6px 12px;
+    border-radius: 3px;
+}
+
+.card-info-description {
+    color: var(--clr-gray);
+    margin-bottom: 25px;
+}
+
+.card-info-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-info-author-img {
+    width: 2rem;
+}
+
+.card-info-author-name {
+    font-weight: var(--fw-extrabold);
+}
+
+.card:hover,
+.card:active {
+    cursor: pointer;
+    box-shadow: var(--card-box-sw-active);
+
+    .card-info-title {
+        color: var(--card-clr-active);
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --fs-small: .925rem;
+        --fs-big: 1.250rem;
+    }
+}
+
+/* General styling */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff-primary);
+}
+
+h3 {
+    font-size: var(--fs-big);
+    font-weight: var(--fw-extrabold);
+}
+
+p {
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+}
+
+/* Utility classes */
+.bg-black {
+    background-color: var(--clr-black);
+}
+
+.bg-gray {
+    background-color: var(--clr-gray);
+}
+
+.bg-yellow {
+    background-color: var(--clr-yellow);
+}
+
+.bg-white {
+    background-color: var(--clr-white);
+}
+
+.text-black {
+    color: var(--clr-black);
+}
+
+.text-gray {
+    color: var(--clr-gray);
+}
+
+.text-yellow {
+    color: var(--clr-yellow);
+}
+
+.text-white {
+    color: var(--clr-white);
+}
